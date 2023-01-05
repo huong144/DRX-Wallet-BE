@@ -1,0 +1,110 @@
+FROM node:10-alpine AS builder
+
+# Install all build dependencies
+# Add bash for debugging purposes
+RUN apk update && \
+    apk add --no-cache --virtual build-dependencies build-base gcc g++ wget git python && \
+    apk add bash
+RUN npm i -g typescript@3.2.2 typeorm
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm i
+
+COPY libs/sota-common/package*.json ./libs/sota-common/
+RUN cd libs/sota-common && npm i
+
+COPY libs/sota-btc/package*.json ./libs/sota-btc/
+RUN cd libs/sota-btc && npm i
+
+COPY libs/sota-eos/package*.json ./libs/sota-eos/
+RUN cd libs/sota-eos && npm i
+
+COPY libs/sota-bch/package*.json ./libs/sota-bch/
+RUN cd libs/sota-bch && npm i
+
+COPY libs/sota-ltc/package*.json ./libs/sota-ltc/
+RUN cd libs/sota-ltc && npm i
+
+COPY libs/sota-eth/package*.json ./libs/sota-eth/
+RUN cd libs/sota-eth && npm i
+
+COPY libs/sota-xrp/package*.json ./libs/sota-xrp/
+RUN cd libs/sota-xrp && npm i
+
+COPY libs/sota-ada/package*.json ./libs/sota-ada/
+RUN cd libs/sota-ada && npm i
+
+COPY libs/wallet-core/package*.json ./libs/wallet-core/
+RUN cd libs/wallet-core && npm i
+
+COPY bin/eos/package*.json ./bin/eos/
+RUN cd bin/eos && npm i
+
+COPY bin/btc/package*.json ./bin/btc/
+RUN cd bin/btc && npm i
+
+COPY bin/bch/package*.json ./bin/bch/
+RUN cd bin/bch && npm i
+
+COPY bin/ltc/package*.json ./bin/ltc/
+RUN cd bin/ltc && npm i
+
+COPY bin/eth/package*.json ./bin/eth/
+RUN cd bin/eth && npm i
+
+COPY bin/xrp/package*.json ./bin/xrp/
+RUN cd bin/xrp && npm i
+
+COPY bin/ada/package*.json ./bin/ada/
+RUN cd bin/ada && npm i
+
+COPY bin/common/package*.json ./bin/common/
+RUN cd bin/common && npm i
+
+COPY bin/typeorm_migration/package*.json ./bin/typeorm_migration/
+RUN cd bin/typeorm_migration && npm i
+
+COPY . .
+
+RUN tsc
+
+RUN cp -rf libs/sota-common/node_modules dist/libs/sota-common/node_modules
+RUN cp -rf libs/sota-btc/node_modules dist/libs/sota-btc/node_modules
+RUN cp -rf libs/sota-eos/node_modules dist/libs/sota-eos/node_modules
+RUN cp -rf libs/sota-bch/node_modules dist/libs/sota-bch/node_modules
+RUN cp -rf libs/sota-ltc/node_modules dist/libs/sota-ltc/node_modules
+RUN cp -rf libs/sota-eth/node_modules dist/libs/sota-eth/node_modules
+RUN cp -rf libs/sota-xrp/node_modules dist/libs/sota-xrp/node_modules
+RUN cp -rf libs/sota-ada/node_modules dist/libs/sota-ada/node_modules
+RUN cp -rf libs/wallet-core/node_modules dist/libs/wallet-core/node_modules
+RUN cp -rf bin/eos/node_modules dist/bin/eos/node_modules
+RUN cp -rf bin/btc/node_modules dist/bin/btc/node_modules
+RUN cp -rf bin/bch/node_modules dist/bin/bch/node_modules
+RUN cp -rf bin/ltc/node_modules dist/bin/ltc/node_modules
+RUN cp -rf bin/eth/node_modules dist/bin/eth/node_modules
+RUN cp -rf bin/xrp/node_modules dist/bin/xrp/node_modules
+RUN cp -rf bin/ada/node_modules dist/bin/ada/node_modules
+RUN cp -rf bin/common/node_modules dist/bin/common/node_modules
+RUN cp -rf bin/typeorm_migration/node_modules dist/bin/typeorm_migration/node_modules
+
+RUN cp -f .env.example dist/.env
+RUN cp -f .env.example dist/.env.example
+
+# RUN apk add jq
+# RUN cd dist && jq -s '{ apps: map(.apps[]) }' app_*.json > apps.json
+
+FROM node:10-alpine
+RUN npm i -g typescript@3.2.2 typeorm pm2@3.4.0
+
+WORKDIR /app
+
+RUN apk add bash
+
+COPY --from=builder /app/dist/ .
+
+EXPOSE 9000
+
+# CMD ["pm2-runtime", "apps.json"]
+CMD tail -f /dev/null

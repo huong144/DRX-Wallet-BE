@@ -1,0 +1,7 @@
+{
+  "chainName": "BSC",
+  "chainId": 56,
+  "averageBlockTime": 15000,
+  "requiredConfirmations": 30,
+  "explorerEndpoint": "https://bscscan.com"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "sota-eth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "NETWORK=goerli mocha --timeout 15000 -r ts-node/register ./test/testEthGateway.spec.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ethereumjs/tx": "4.0.1",
+    "@types/ethereumjs-tx": "1.0.1",
+    "@types/lodash": "4.14.119",
+    "@types/lru-cache": "5.1.0",
+    "@types/node": "10.12.18",
+    "@types/web3": "1.0.14",
+    "lodash": "4.17.11",
+    "lru-cache": "5.1.1",
+    "p-limit": "2.2.0",
+    "sota-common": "../sota-common",
+    "web3": "1.8.0"
+  },
+  "devDependencies": {
+    "@types/chai": "4.1.7",
+    "@types/mocha": "5.2.5",
+    "chai": "4.2.0",
+    "mocha": "5.2.0"
+  }
+}

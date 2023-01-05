@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-trx-crawler",
+      "script": "bin/trx/TrxDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-trx-picker",
+      "script": "bin/trx/TrxPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-trx-sender",
+      "script": "bin/trx/TrxSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-trx-signer",
+      "script": "bin/trx/TrxSignerWorker.js"
+    },
+    {
+      "name": "hot-wallet-trx-verifier",
+      "script": "bin/trx/TrxVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-trx-collector",
+      "script": "bin/trx/TrxCollectorWorker.js"
+    }
+  ]
+}

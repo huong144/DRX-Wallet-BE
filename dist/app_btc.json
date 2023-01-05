@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-btc-crawler",
+      "script": "bin/btc/BtcDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-btc-picker",
+      "script": "bin/btc/BtcPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-btc-signer",
+      "script": "bin/btc/BtcSignerWorker.js"
+    },
+    {
+      "name": "hot-wallet-btc-sender",
+      "script": "bin/btc/BtcSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-btc-verifier",
+      "script": "bin/btc/BtcVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-btc-collector",
+      "script": "bin/btc/BtcCollectorWorker.js"
+    },
+    {
+      "name": "hot-wallet-btc-fee-seeder",
+      "script": "bin/btc/BtcFeeSeederWorker.js"
+    }
+  ]
+}

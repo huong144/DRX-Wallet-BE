@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-bsc-crawler",
+      "script": "bin/bsc/BscDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-bsc-picker",
+      "script": "bin/bsc/BscPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-bsc-sender",
+      "script": "bin/bsc/BscSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-bsc-signer",
+      "script": "bin/bsc/BscSignerWorker.js"
+    },
+    {
+      "name": "hot-wallet-bsc-verifier",
+      "script": "bin/bsc/BscVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-bsc-collector",
+      "script": "bin/bsc/BscCollectorWorker.js"
+    },
+    {
+      "name": "hot-wallet-bsc-fee-seeder",
+      "script": "bin/bsc/BscFeeSeederWorker.js"
+    }
+  ]
+}

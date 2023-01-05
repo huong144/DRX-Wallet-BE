@@ -1,0 +1,7 @@
+{
+  "chainName": "Shasta",
+  "chainId": 2,
+  "averageBlockTime": 15000,
+  "requiredConfirmations": 6,
+  "explorerEndpoint": "https://shasta.tronscan.org"
+}

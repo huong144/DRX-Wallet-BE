@@ -1,0 +1,7 @@
+{
+  "chainName": "Rinkeby",
+  "chainId": 4,
+  "averageBlockTime": 6000,
+  "requiredConfirmations": 6,
+  "explorerEndpoint": "https://rinkeby.etherscan.io"
+}

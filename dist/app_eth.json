@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-eth-crawler",
+      "script": "bin/eth/EthDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-eth-picker",
+      "script": "bin/eth/EthPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-eth-sender",
+      "script": "bin/eth/EthSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-eth-signer",
+      "script": "bin/eth/EthSignerWorker.js"
+    },
+    {
+      "name": "hot-wallet-eth-verifier",
+      "script": "bin/eth/EthVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-eth-collector",
+      "script": "bin/eth/EthCollectorWorker.js"
+    },
+    {
+      "name": "hot-wallet-eth-fee-seeder",
+      "script": "bin/eth/EthFeeSeederWorker.js"
+    }
+  ]
+}

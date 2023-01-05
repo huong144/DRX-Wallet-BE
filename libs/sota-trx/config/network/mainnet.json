@@ -1,0 +1,7 @@
+{
+  "chainName": "Mainnet",
+  "chainId": 1,
+  "averageBlockTime": 15000,
+  "requiredConfirmations": 6,
+  "explorerEndpoint": "https://tronscan.org"
+}

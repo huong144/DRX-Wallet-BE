@@ -1,0 +1,21 @@
+FROM node:10.24.1
+
+WORKDIR /app
+COPY . .
+
+RUN npm i -g typescript@3.2.2 typeorm
+
+RUN make all
+# RUN cp .env.example .env
+# RUN cp .env.example dist/.env
+RUN cp .env dist/.env
+RUN make migrations
+
+# RUN pm2 start dist/app_web.json
+# RUN pm2 start dist/app_eth.json
+# RUN pm2 start dist/app_xrp.json
+# RUN pm2 start dist/app_eos.json
+
+CMD ["tail", "-f", "/dev/null"]
+
+# CMD ["pm2-runtime", "dist/app_web.json"]

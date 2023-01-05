@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-xrp-crawler",
+      "script": "bin/xrp/XrpDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-xrp-picker",
+      "script": "bin/xrp/XrpPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-xrp-sender",
+      "script": "bin/xrp/XrpSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-xrp-verifier",
+      "script": "bin/xrp/XrpVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-xrp-signer",
+      "script": "bin/xrp/XrpSignerWorker.js"
+    }
+  ]
+}

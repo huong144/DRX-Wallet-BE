@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-sol-crawler",
+      "script": "bin/sol/SolDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-sol-picker",
+      "script": "bin/sol/SolPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-sol-signer",
+      "script": "bin/sol/SolSignerWorker.js"
+    },
+    {
+      "name": "hot-wallet-sol-sender",
+      "script": "bin/sol/SolSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-sol-verifier",
+      "script": "bin/sol/SolVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-sol-collector",
+      "script": "bin/sol/SolCollectorWorker.js"
+    }
+  ]
+}

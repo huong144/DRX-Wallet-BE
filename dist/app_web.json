@@ -1,0 +1,52 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-Webhook",
+      "script": "bin/common/WebHookWorker.js"
+    },
+    {
+      "name": "hot-wallet-WebService",
+      "script": "bin/common/WebService.js"
+    },
+    {
+      "name": "hot-wallet-btc-webservice",
+      "script": "bin/btc/BtcWebService.js"
+    },
+    {
+      "name": "hot-wallet-eth-webservice",
+      "script": "bin/eth/EthWebService.js"
+    },
+    {
+      "name": "hot-wallet-bsc-webservice",
+      "script": "bin/bsc/BscWebService.js"
+    },
+    {
+      "name": "hot-wallet-xrp-webservice",
+      "script": "bin/xrp/XrpWebService.js"
+    },
+    {
+      "name": "hot-wallet-ltc-webservice",
+      "script": "bin/ltc/LtcWebService.js"
+    },
+    {
+      "name": "hot-wallet-trx-webservice",
+      "script": "bin/trx/TrxWebService.js"
+    },
+    {
+      "name": "hot-wallet-polygon-webservice",
+      "script": "bin/polygon/PolygonWebService.js"
+    },
+    {
+      "name": "hot-wallet-sol-webservice",
+      "script": "bin/sol/SolWebService.js"
+    },
+    {
+      "name": "hot-wallet-CheckBalanceWorker",
+      "script": "bin/common/CheckBalanceWorker.js"
+    },
+    {
+      "name": "hot-wallet-alert-worker",
+      "script": "bin/common/AlertWorker.js"
+    }
+  ]
+}

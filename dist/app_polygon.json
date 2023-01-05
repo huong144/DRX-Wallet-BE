@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "name": "hot-wallet-polygon-crawler",
+      "script": "bin/polygon/PolygonDepositWorker.js"
+    },
+    {
+      "name": "hot-wallet-polygon-picker",
+      "script": "bin/polygon/PolygonPickerWorker.js"
+    },
+    {
+      "name": "hot-wallet-polygon-sender",
+      "script": "bin/polygon/PolygonSenderWorker.js"
+    },
+    {
+      "name": "hot-wallet-polygon-signer",
+      "script": "bin/polygon/PolygonSignerWorker.js"
+    },
+    {
+      "name": "hot-wallet-polygon-verifier",
+      "script": "bin/polygon/PolygonVerifierWorker.js"
+    },
+    {
+      "name": "hot-wallet-polygon-collector",
+      "script": "bin/polygon/PolygonCollectorWorker.js"
+    },
+    {
+      "name": "hot-wallet-polygon-fee-seeder",
+      "script": "bin/polygon/PolygonFeeSeederWorker.js"
+    }
+  ]
+}
